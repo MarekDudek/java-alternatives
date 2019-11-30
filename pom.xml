@@ -12,7 +12,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <name>java-alternatives</name>
-    <url>http://maven.apache.org</url>
+    <url>https://github.com/MarekDudek/java-alternatives</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -131,6 +131,17 @@
                     <argLine>
                         --illegal-access=permit
                     </argLine>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>dudek.JavaAlternativesMain</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>
