@@ -1,5 +1,3 @@
 # java-alternatives
 
-Tool(s) to help set up and manage Java alternatives on Linux systems.
-
-_work in progress_
+Tool(s) to help manage Java alternatives in Linux systems.
