@@ -11,6 +11,7 @@ import static dudek.alternative.JdkJre.JDK;
 import static java.lang.System.*;
 import static java.util.Objects.isNull;
 
+@Deprecated
 public class JavaAlternativesMain {
 
     public static void main(final String[] args) {
