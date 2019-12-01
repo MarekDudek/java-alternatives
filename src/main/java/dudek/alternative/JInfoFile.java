@@ -5,20 +5,21 @@ import lombok.EqualsAndHashCode;
 import lombok.NonNull;
 import lombok.ToString;
 
+import java.util.List;
+
 @Builder
 @EqualsAndHashCode
 @ToString
-public final class Alternative {
-
-    @NonNull
-    public final String link;
+public final class JInfoFile {
 
     @NonNull
     public final String name;
 
     @NonNull
-    public final String path;
+    public final String alias;
+
+    public final int priority;
 
     @NonNull
-    public final int priority;
+    public final List<Alternative> alternatives;
 }
