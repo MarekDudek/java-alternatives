@@ -1,11 +1,13 @@
 package dudek;
 
 import dudek.alternative.AlternativeOps;
+import dudek.alternative.JdkJre;
 
 import java.io.File;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
+import static dudek.alternative.JdkJre.JDK;
 import static java.lang.System.*;
 import static java.util.Objects.isNull;
 
@@ -52,7 +54,7 @@ public class JavaAlternativesMain {
         }
 
         final var executables = Stream.of(files).filter(File::canExecute);
-        final var alternatives = executables.map(e -> AlternativeOps.fromPath(e, priority));
+        final var alternatives = executables.map(e -> AlternativeOps.fromPath(e, priority, JDK));
         final var commands = alternatives.map(AlternativeOps::install);
 
         commands.sorted().forEach(a -> out.printf("%s%n", a));

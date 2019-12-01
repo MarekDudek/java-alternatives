@@ -60,7 +60,19 @@ public enum JInfoFileOps {
 
         final var n = a.name;
         final var l = a.path;
+        final var j = jdkJre(a.jdkJre);
 
-        return format("jdk %s %s", n, l);
+        return format("%s %s %s", j, n, l);
+    }
+
+    private static String jdkJre(final JdkJre jdkJre) {
+        switch (jdkJre) {
+            case JDK:
+                return "jdk";
+            case JRE:
+                return "jre";
+            default:
+                return null;
+        }
     }
 }

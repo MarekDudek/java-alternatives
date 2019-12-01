@@ -21,4 +21,7 @@ public final class Alternative {
 
     @NonNull
     public final int priority;
+
+    @NonNull
+    public final JdkJre jdkJre;
 }

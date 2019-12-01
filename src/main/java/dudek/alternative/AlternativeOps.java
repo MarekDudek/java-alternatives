@@ -8,7 +8,7 @@ public enum AlternativeOps {
 
     ;
 
-    public static Alternative fromPath(final File executable, final int priority) {
+    public static Alternative fromPath(final File executable, final int priority, final JdkJre jdkJre) {
 
         final var name = executable.getName();
         final var link = format("/usr/bin/%s", name);
@@ -19,6 +19,7 @@ public enum AlternativeOps {
                 name(name).
                 path(path).
                 priority(priority).
+                jdkJre(jdkJre).
                 build();
     }
 
