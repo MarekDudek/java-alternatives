@@ -19,7 +19,7 @@ public class JavaAlternativesMain {
         }
 
         final var jdkPath = args[0];
-        final File home = new File(jdkPath);
+        final var home = new File(jdkPath);
 
         if (!home.exists()) {
             err.printf("File '%s' does not exist!", jdkPath);
@@ -41,17 +41,17 @@ public class JavaAlternativesMain {
             return;
         }
 
-        final File bin = Paths.get(home.getPath(), "bin").toFile();
-        final File[] files = bin.listFiles();
+        final var bin = Paths.get(home.getPath(), "bin").toFile();
+        final var files = bin.listFiles();
 
         if (isNull(files)) {
             err.print("I/O error while reading 'bin' folder");
             exit(1);
         }
 
-        final Stream<File> executables = Stream.of(files).filter(File::canExecute);
-        final Stream<Alternative> alternatives = executables.map(e -> AlternativeOps.fromPath(e, priority));
-        final Stream<String> commands = alternatives.map(AlternativeOps::install);
+        final var executables = Stream.of(files).filter(File::canExecute);
+        final var alternatives = executables.map(e -> AlternativeOps.fromPath(e, priority));
+        final var commands = alternatives.map(AlternativeOps::install);
 
         commands.sorted().forEach(a -> out.printf("%s%n", a));
     }
