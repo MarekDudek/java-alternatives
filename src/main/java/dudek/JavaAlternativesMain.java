@@ -1,5 +1,7 @@
 package dudek;
 
+import dudek.alternative.AlternativeOps;
+
 import java.io.File;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
@@ -9,7 +11,7 @@ import static java.util.Objects.isNull;
 
 public class JavaAlternativesMain {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         out.println("I help manage Java alternatives");
 

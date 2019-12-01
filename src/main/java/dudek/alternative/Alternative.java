@@ -1,4 +1,4 @@
-package dudek;
+package dudek.alternative;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -8,7 +8,7 @@ import lombok.ToString;
 @Builder
 @ToString
 @EqualsAndHashCode
-final class Alternative {
+public final class Alternative {
 
     @NonNull
     public final String link;

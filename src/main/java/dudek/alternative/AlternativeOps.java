@@ -1,12 +1,12 @@
-package dudek;
+package dudek.alternative;
 
 import java.io.File;
 
-enum AlternativeOps {
+public enum AlternativeOps {
 
     ;
 
-    static Alternative fromPath(final File e, final int p) {
+    public static Alternative fromPath(final File e, final int p) {
 
         final var n = e.getName();
         final var l = String.format("/usr/bin/%s", n);
@@ -20,7 +20,7 @@ enum AlternativeOps {
                 build();
     }
 
-    static String install(final Alternative a) {
+    public static String install(final Alternative a) {
         return String.format("sudo update-alternatives --install %s %s %s %d", a.link, a.name, a.path, a.priority);
     }
 }
